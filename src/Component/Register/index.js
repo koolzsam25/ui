@@ -39,7 +39,7 @@ export class Register extends Component {
                             <Form.Label>Register for your account</Form.Label>                            
                         </Form.Group>  
                         <div style={{flexDirection:'row' , margin:'10px' , textAlign:'left'}}>              
-                        <Form.Group size="lg" controlId="email" style={{flexDirection:'row' }} >
+                        <Form.Group size="lg" controlId="email" style={{flexDirection:'row' , margin:'10px'}} >
                             <Row>
                             <Col><Form.Label>Email</Form.Label></Col>
                             <Col><Form.Control
