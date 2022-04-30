@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { STUDENT } from '../../utility/constants';
 
-const Login = () => {
+const Login = ({ setRoleDashboard }) => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -9,10 +12,15 @@ const Login = () => {
         return email.length > 0 && password.length > 0;
     }
     function handleSubmit(event) {
-        if(!validateForm()){
+        event.preventDefault();
+        console.log("## Inside submit ");
+        if (!validateForm()) {
             console.log("Please provide valid email/password");
         }
-        // event.preventDefault();
+        setRoleDashboard("student");
+        console.log("## Inside Student Login ");
+        navigate('/dashboard', { state: STUDENT });
+
     }
 
     return (
@@ -34,7 +42,7 @@ const Login = () => {
                             <Col><Form.Control type="password" onChange={(e) => setPassword(e.target.value)} /> </Col>
                         </Row>
                     </Form.Group>
-                    <Button block size="lg" type="submit" style={{ margin: '10px' }} onClick={handleSubmit}>
+                    <Button block size="lg" type="submit" style={{ margin: '10px' }} onClick={(e) => { handleSubmit(e) }}>
                         Login
                     </Button >
                     <a href="/register" style={{ margin: '10px' }}>
