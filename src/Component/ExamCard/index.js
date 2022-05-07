@@ -8,7 +8,6 @@ const ExamCard = ({examData}) => {
     const [show, setShow] = useState(false);
     const location = useLocation();
     const pastExam = isExamOver(examData.Expiry) ;
-    console.log("## ", JSON.stringify(location));
     const handleCloseResult = () => setShow(false);
     const handleShowResult = () => setShow(true);
     return (

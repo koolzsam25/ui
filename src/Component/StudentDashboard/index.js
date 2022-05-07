@@ -6,8 +6,7 @@ import { getExamData,filterExamData } from '../../utility/examService';
 import ExamCard from '../ExamCard';
 import {ExamWraper} from './styles';
 const Dashbaord = (role) => {
-    const location = useLocation();
-    console.log("## ", JSON.stringify(location));  
+    const location = useLocation(); 
     const [filteredExamData, setFilteredData] = useState(null);
     useEffect(() => {
         setFilteredData(getExamData(examData));
@@ -30,7 +29,7 @@ const Dashbaord = (role) => {
               </>
             ))}
         </div>
-        <ExamWraper>
+        <ExamWraper >
             {filteredExamData &&
             filteredExamData.map((data) => (
                 <ExamCard examData={data}/> 

@@ -8,7 +8,6 @@ import {getToken} from '../../utility/login';
 
 const Dashbaord = (role) => {
     const location = useLocation();
-    console.log("## Dashboard", JSON.stringify(location));
     let dashboard;
     if (location.state === STUDENT) {
         dashboard = <StudentDashboard />;
