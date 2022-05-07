@@ -1,0 +1,9 @@
+{
+    "CustomerData": {
+        "instituteName": "University Study Examination Monitoring Systems",
+        "Dashboard": "Dashboard"
+    },
+    "credit": {
+        "initialDays": 30
+    }
+}

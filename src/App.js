@@ -8,7 +8,8 @@ import { Register } from './Component/Register';
 import useToken from './hooks/useToken';
 import useRole from './hooks/useRole';
 import { useNavigate } from 'react-router-dom';
-import {getRole, getToken} from './utility/login';
+import { getRole, getToken } from './utility/login';
+import NavBar from './Component/Navbar';
 
 function App() {
   const navigate = useNavigate();
@@ -21,10 +22,10 @@ function App() {
 
     if (!getToken()) {
       console.log("## APP Not logged in");
-       navigate('/login' ,{state: ''});
+      navigate('/login', { state: '' });
       // return <Login setToken={setToken} />
-    }else {
-      navigate('/dashboard' ,{state: getRole()});
+    } else {
+      navigate('/dashboard', { state: getRole() });
     }
   }, []);
 
@@ -33,13 +34,15 @@ function App() {
   }
   return (
     <div className="wrapper" align='center' verticalalign='center'>
-      {/* <BrowserRouter> */}
-          <Routes>
-            <Route path="/login" caseSensitive={false} element={<Login  />} />
-            <Route path="/register" caseSensitive={false} element={<Register />} />
-            <Route path="/dashboard" caseSensitive={false} element={<Dashboard  />} />
-          </Routes>
-      {/* </BrowserRouter> */}
+      <NavBar/>
+        {/* <BrowserRouter> */}
+        <Routes>
+          <Route path="/login" caseSensitive={false} element={<Login />} />
+          <Route path="/register" caseSensitive={false} element={<Register />} />
+          <Route path="/dashboard" caseSensitive={false} element={<Dashboard />} />
+        </Routes>
+        {/* </BrowserRouter> */}
+      
     </div>
   );
 }

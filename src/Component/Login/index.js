@@ -28,7 +28,7 @@ const Login = () => {
         saveRole(token.role);
         saveToken(token);
         console.log("## LOGIN Inside Student Login ");
-        navigate('/dashboard', { state: STUDENT });
+        navigate('/dashboard', { state: token.role });
 
     }
 

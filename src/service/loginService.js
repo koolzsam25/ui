@@ -8,5 +8,5 @@ export async function loginUser(credentials) {
     // })
     //     .then(data => data.json())
 
-    return { "token": "test123", "role": "STUDENT" };
+    return { "token": "test123", "role": "TEACHER" };
 }

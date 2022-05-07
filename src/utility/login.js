@@ -10,7 +10,7 @@ export const saveToken = userToken => {
 export const getRole = () => {
     const roleString = sessionStorage.getItem('role');
     const userRole = JSON.parse(roleString);
-    return userRole?.token
+    return userRole;
 };
 
 export const saveRole = userRole => {
