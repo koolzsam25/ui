@@ -2,23 +2,32 @@ import React, { useState } from 'react';
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { STUDENT } from '../../utility/constants';
+import { loginUser } from '../../service/loginService';
+import { useLocation } from 'react-router-dom';
+import {saveToken, saveRole} from '../../utility/login';
 
-const Login = ({ setRoleDashboard }) => {
-    const navigate = useNavigate()
+const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    console.log("## LOGIN ", JSON.stringify(location));
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
-        console.log("## Inside submit ");
+        console.log("## LOGIN Inside submit ");
         if (!validateForm()) {
             console.log("Please provide valid email/password");
         }
-        setRoleDashboard("student");
-        console.log("## Inside Student Login ");
+        const token = await loginUser({
+            email,
+            password
+        });
+        saveRole(token.role);
+        saveToken(token);
+        console.log("## LOGIN Inside Student Login ");
         navigate('/dashboard', { state: STUDENT });
 
     }
