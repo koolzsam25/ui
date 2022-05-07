@@ -2,46 +2,21 @@ import React, { useState,useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
 import { examData,buttons } from '../../utility/Data';
+import { getExamData,filterExamData } from '../../service/examService';
 import ExamCard from '../ExamCard';
 const Dashbaord = (role) => {
     const location = useLocation();
-    console.log("## ", JSON.stringify(location));
-    function getExamData() {
-        const dataList = examData;
-        return dataList;
-      }
-      function filterExamData(filterType) {
-        let filtredExamData ;
-        switch(filterType)
-        { 
-            case 'next7days':
-                filtredExamData = getExamData().filter(_=>new Date(_.Expiry).getDate()- new Date().getDate() <= 7 && new Date(_.Expiry).getDate()- new Date().getDate() > 0);
-                break;
-            case 'nextMonths':
-                filtredExamData = getExamData().filter(_=>new Date(_.Expiry).getDate() - new Date().getDate() <= 30 && new Date(_.Expiry).getDate()- new Date().getDate() > 0);
-                break;
-            case 'pastExams':
-                filtredExamData = getExamData().filter(_=>new Date(_.Expiry) < new Date());
-                break;
-            default:
-                filtredExamData = getExamData();
-                break;
-            
-        }
-        return filtredExamData;
-      }
-    
+    console.log("## ", JSON.stringify(location));  
     const [filteredExamData, setFilteredData] = useState(null);
     useEffect(() => {
-        setFilteredData(getExamData());
-      }, []);
-    
+        setFilteredData(getExamData(examData));
+    }, []);
     function handleFilter(e) {
         let filterType = e.target.value;
         filterType !== "all"
-          ? setFilteredData(filterExamData(filterType))
-          : setFilteredData(getExamData());
-      }
+          ? setFilteredData(filterExamData(filterType,examData))
+          : setFilteredData(getExamData(examData));
+    }
     return (
         <>
         <div style={{ display: 'flex' , margin:'10px'}}>
@@ -62,6 +37,5 @@ const Dashbaord = (role) => {
         </div>
         </>
     );
-
 }
 export default Dashbaord;

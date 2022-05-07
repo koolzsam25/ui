@@ -28,3 +28,9 @@ https://github.com/facebook/create-react-app
 ## Sample React funcational component
 
 https://codersera.com/blog/react-functional-components/
+
+## DB table example 
+https://databaseinmysql.blogspot.com/2016/02/database-table-for-online-examination.html
+
+## React Icons 
+https://react-icons.github.io/react-icons
