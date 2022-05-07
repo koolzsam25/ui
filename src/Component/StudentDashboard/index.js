@@ -1,9 +1,10 @@
 import React, { useState,useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ToggleButton } from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
 import { examData,buttons } from '../../utility/Data';
-import { getExamData,filterExamData } from '../../service/examService';
+import { getExamData,filterExamData } from '../../utility/examService';
 import ExamCard from '../ExamCard';
+import {ExamWraper} from './styles';
 const Dashbaord = (role) => {
     const location = useLocation();
     console.log("## ", JSON.stringify(location));  
@@ -29,12 +30,12 @@ const Dashbaord = (role) => {
               </>
             ))}
         </div>
-        <div style={{ display: 'flex'}}>
+        <ExamWraper>
             {filteredExamData &&
             filteredExamData.map((data) => (
                 <ExamCard examData={data}/> 
             ))}
-        </div>
+        </ExamWraper>
         </>
     );
 }

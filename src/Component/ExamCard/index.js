@@ -2,26 +2,19 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Card, Button,Modal } from "react-bootstrap";
 import { students,scores } from '../../utility/Data';
-import { isExamOver,getStudentResult,getStudentName,getTimeRemaining } from '../../service/examService';
+import { isExamOver,getStudentResult,getStudentName,getTimeRemaining } from '../../utility/examService';
+import {DownloadCertificate, ResultTitle, ExamTitle} from './styles';
 const ExamCard = ({examData}) => {
     const [show, setShow] = useState(false);
     const location = useLocation();
-    const pastExam = isExamOver(examData.Expiry);
+    const pastExam = isExamOver(examData.Expiry) ;
     console.log("## ", JSON.stringify(location));
     const handleCloseResult = () => setShow(false);
     const handleShowResult = () => setShow(true);
-    let titleStyle= {
-            borderRadius:'5px', backgroundColor: 'teal' , height:'35px', fontWeight:'bold', paddingTop:'5px' , color:'white'
-    }
-    if(!pastExam){
-        titleStyle= {
-            borderRadius:'5px', backgroundColor: 'forestgreen' , height:'35px', fontWeight:'bold', paddingTop:'5px' , color:'white'
-        }
-    }
     return (
         <div>
         <Card style={{ width: '18rem',borderRadius:'5px', margin:'5px' }}>
-        <Card.Title style={titleStyle}>{examData.Name}</Card.Title>
+        <ExamTitle ispastexam={pastExam}>{examData.Name}</ExamTitle>
         <Card.Body style={{ alignItems:'left'}}>
             <Card.Text>Start : {examData.Start}</Card.Text>
             <Card.Text>Expire : {examData.Expiry}</Card.Text>
@@ -37,12 +30,12 @@ const ExamCard = ({examData}) => {
     
     <Modal show={show} onHide={handleCloseResult}>
     <Modal.Header closeButton>
-      <Modal.Title style={{ color:'teal'}}>Result</Modal.Title>
+      <ResultTitle >Result</ResultTitle>
     </Modal.Header>
     <Modal.Body>Student : {getStudentName(students,"2")}</Modal.Body>
     <Modal.Body>Percentage : {getStudentResult(scores,"2",examData.Id)}%</Modal.Body>
     <Modal.Footer>
-        <Button style={{ backgroundColor:'teal', margin:'5px' }} variant="primary" onClick={handleCloseResult}>Download Certificate</Button>
+        <DownloadCertificate variant="primary" onClick={handleCloseResult}>Download Certificate</DownloadCertificate>
         <Button style={{ backgroundColor:'teal', margin:'5px' }} variant="primary" onClick={handleCloseResult}>Close</Button>
     </Modal.Footer>
   </Modal>
