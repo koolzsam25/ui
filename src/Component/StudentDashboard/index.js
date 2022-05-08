@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Button, ToggleButton } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
 import { examData,buttons } from '../../utility/Data';
 import { getExamData,filterExamData } from '../../utility/examService';
@@ -17,8 +17,10 @@ const Dashbaord = (role) => {
           ? setFilteredData(filterExamData(filterType,examData))
           : setFilteredData(getExamData(examData));
     }
+    // debugger
     return (
         <>
+        
         <div style={{ display: 'flex' , margin:'10px'}}>
         {buttons &&
             buttons.map((type, index) => (
@@ -31,8 +33,8 @@ const Dashbaord = (role) => {
         </div>
         <ExamWraper >
             {filteredExamData &&
-            filteredExamData.map((data) => (
-                <ExamCard examData={data}/> 
+            filteredExamData.map((data, index) => (
+                <ExamCard key={index} examData={data}/> 
             ))}
         </ExamWraper>
         </>

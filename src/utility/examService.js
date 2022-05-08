@@ -32,7 +32,7 @@ export function getStudentName(students, studentId) {
     return students.find(_ => _.Id == studentId)?.Name;
 }
 //to-do need work to return in hour , min and sec format 
-export function getTimeRemaining(expirtDate) {
-    const diffInMs = Math.round(new Date(expirtDate) - new Date());
-    return diffInMs / (1000 * 60 * 60);
+export function getTimeRemaining(expiryDate) {
+    const diffInMs = Math.round(new Date(expiryDate) - new Date());
+    return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }

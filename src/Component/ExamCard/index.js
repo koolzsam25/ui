@@ -13,13 +13,13 @@ const ExamCard = ({examData}) => {
     return (
         <div>
         <Card style={{ width: '18rem',borderRadius:'5px', margin:'5px' }}>
-        <ExamTitle ispastexam={pastExam}>{examData.Name}</ExamTitle>
+        <ExamTitle ispastexam={pastExam.toString()}>{examData.Name}</ExamTitle>
         <Card.Body style={{ alignItems:'left'}}>
             <Card.Text>Start : {examData.Start}</Card.Text>
             <Card.Text>Expire : {examData.Expiry}</Card.Text>
             <Card.Text>No Of Questions : {examData.NoOfQuestions}</Card.Text>
             <Card.Text>Exam Duration : {examData.Duration}</Card.Text>
-            {!pastExam &&<Card.Text>Time Remaining : {getTimeRemaining(examData.Expiry)}</Card.Text>}
+            {!pastExam &&<Card.Text>Time Remaining : {getTimeRemaining(examData.Expiry)} Days</Card.Text>}
             <Card.Footer style={{ backgroundColor:'white'}}>
                 {pastExam &&<Button style={{ backgroundColor:'teal', width:'100px', margin:'5px' }} onClick={handleShowResult}>Result</Button>}
                 {!pastExam &&<Button style={{ backgroundColor:'forestgreen', width:'100px', margin:'5px' }}>Proceed</Button>}
