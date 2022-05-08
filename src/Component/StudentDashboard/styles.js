@@ -1,5 +1,5 @@
 import styled from '@xstyled/styled-components';
-
+import { Button } from "react-bootstrap";
 export const ExamWraper = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -7,4 +7,14 @@ export const ExamWraper = styled.div`
         justify-content: center;
 
       }
+`;
+
+export const FilterWraper = styled.div`
+    display: flex;
+    margin: 10px
+`;
+
+export const FilterButton = styled(Button)`
+    margin: 10px;
+    border-radius: 5px
 `;
