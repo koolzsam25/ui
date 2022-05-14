@@ -1,3 +1,4 @@
+import { students } from './Data';
 export function getExamData(examData) {
     const dataList = examData;
     return dataList;
@@ -28,8 +29,8 @@ export function isExamOver(expiry) {
 export function getStudentResult(scores, studentId, examId) {
     return scores.find(_ => _.StudentId == studentId && _.ExamId == examId)?.Result;
 }
-export function getStudentName(students, studentId) {
-    return students.find(_ => _.Id == studentId)?.Name;
+export function getStudentDetails(studentId) {
+    return students.find(_ => _.Id == studentId);
 }
 //to-do need work to return in hour , min and sec format 
 export function getTimeRemaining(expiryDate) {

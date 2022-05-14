@@ -10,6 +10,7 @@ import useRole from './hooks/useRole';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getRole, getToken } from './utility/login';
 import NavBar from './Component/Navbar';
+import QuestionPaper from './Component/QuestionPaper';
 
 function App() {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ function App() {
         <Route path="/login" caseSensitive={false} element={<Login />} />
         <Route path="/register" caseSensitive={false} element={<Register />} />
         <Route path="/dashboard" caseSensitive={false} element={<Dashboard />} />
+        <Route path="/questionPaper" caseSensitive={false} element={<QuestionPaper />} />
       </Routes>
       {/* </BrowserRouter> */}
 
