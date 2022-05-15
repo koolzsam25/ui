@@ -24,7 +24,7 @@ const Dashbaord = (role) => {
         {buttons &&
             buttons.map((type, index) => (
               <>
-                <FilterButton variant="info" key={index} value={type.value} onClick={handleFilter} >
+                <FilterButton key={index} value={type.value} onClick={handleFilter} >
                   {type.name}
                 </FilterButton>
               </>

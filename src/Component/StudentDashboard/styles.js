@@ -16,5 +16,6 @@ export const FilterWraper = styled.div`
 
 export const FilterButton = styled(Button)`
     margin: 10px;
-    border-radius: 5px
+    border-radius: 5px;
+    background-color: ${props => props.theme.info};
 `;

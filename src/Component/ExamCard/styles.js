@@ -11,11 +11,11 @@ export const ResultTitle = styled(Modal.Title)`
 `;
 
 export const ExamTitle = styled(Card.Title)`
-  ${({ ispastexam }) =>
+  ${({ ispastexam, theme: { primary, secondary } }) =>
   css({
-      backgroundColor: ispastexam ? 'teal' : 'forestgreen',
+      backgroundColor: ispastexam == 'true' ?  secondary : primary,
   })}
-    borderRadius: 5px; 
+    border-radius: 5px; 
     height:35px;
     font-weight: bold; 
     padding-top: 5px;
@@ -28,12 +28,12 @@ export const ExamsFooter = styled(Card.Footer)`
 
 export const ExamsCard = styled(Card)`
     width: 18rem;
-    borderRadius: 5px;
+    border-radius: 5px;
     margin: 5px
 `;
 
 export const ResultButton = styled(Button)`
-    background-color: teal;
+    background-color: ${props => props.theme.secondary};
     width: 100px;
     margin: 5px
 `;
@@ -44,7 +44,7 @@ export const ThisisMeButton = styled(Button)`
     margin-left: 15px
 `;
 export const ProceedButton = styled(Button)`
-    background-color: forestgreen;
+    background-color: ${props => props.theme.primary};
     width: 100px;
     margin: 5px
 `;
