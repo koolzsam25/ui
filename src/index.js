@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import ErrorBoundary  from './utility/ErrorBoundary';
+import './fonts/Kruti/Kruti_Dev_010_Regular.ttf';
+
 
 ReactDOM.render(
   <React.StrictMode>

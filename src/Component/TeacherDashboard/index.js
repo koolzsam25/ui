@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import {useLocation} from 'react-router-dom';
+import {TeacherDashboard} from './styles';
 
 
 const Dashbaord = (role) => {
     const location = useLocation();
 
     return (
-        <div>
-            <div>
-                <label>Teacher Dashbaord</label>
-            </div>
-            
-        </div>
+        <TeacherDashboard>
+                <label>cgq fodYih; ç'u </label>
+        </TeacherDashboard>
 
     );
 

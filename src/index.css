@@ -6,6 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@font-face {
+  font-family: "KrutiRegular";
+  src: local("KrutiRegular"),
+   url("./fonts/Kruti/Kruti_Dev_010_Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
