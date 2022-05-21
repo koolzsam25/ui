@@ -1,3 +1,5 @@
+import { whiteSpace } from "@xstyled/styled-components"
+
 // Some base options that will apply to all themes
 export const base = {
     breakpoints: ['768px'],
@@ -42,7 +44,10 @@ export const base = {
     info: "#5c8f94",
     warning: "#6e9fa5",
     light: "#eceeec",
-    dark: "#1e2b37"
+    dark: "#1e2b37",
+    active: "#5b748b",
+    font: "white",
+    background: "black"
   }
   
   // Dark theme colours

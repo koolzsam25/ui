@@ -1,13 +1,27 @@
 import styled, {css, style} from '@xstyled/styled-components';
 import { Card, Button, Modal, Image,Stack } from "react-bootstrap";
 
-export const CloseButton = styled(Button)`
-    background-color: teal;
+const CustomButton = styled(Button)`
+    &:hover {
+        background-color: ${props => props.theme.active};
+        border-color: ${props => props.theme.active};
+    }
+    &:focus {
+        background-color: ${props => props.theme.active};
+        border-color: ${props => props.theme.active};
+        box-shadow: 0 0 0 0.25rem rgb(147 166 184 / 50%);
+    }
+
+`;
+
+export const CloseButton = styled(CustomButton)`
+    background-color: ${props => props.theme.primary};
+    border-color: ${props => props.theme.primary};
     margin:5px;
 `;
 
 export const ResultTitle = styled(Modal.Title)`
-    color: teal;
+    color: ${props => props.theme.primary};
 `;
 
 export const ExamTitle = styled(Card.Title)`
@@ -19,38 +33,47 @@ export const ExamTitle = styled(Card.Title)`
     height:35px;
     font-weight: bold; 
     padding-top: 5px;
-    color: white;
+    color: ${props => props.theme.font};
 `;
 
 export const ExamsFooter = styled(Card.Footer)`
-    background-color: white
+    background-color: ${props => props.theme.font};
+    border-top: 2px solid rgba(0,0,0,.125);
+    padding-bottom: 0px;
 `;
 
 export const ExamsCard = styled(Card)`
     width: 18rem;
     border-radius: 5px;
-    margin: 5px
+    margin: 10px;
+    border: none;
 `;
 
-export const ResultButton = styled(Button)`
+export const ExamsBody = styled(Card.Body)`
+    border: 2px solid rgba(0,0,0,.125);
+`;
+
+export const ResultButton = styled(CustomButton)`
     background-color: ${props => props.theme.secondary};
+    border-color: ${props => props.theme.secondary};
     width: 100px;
     margin: 5px
 `;
 
 export const ThisisMeButton = styled(Button)`
-    background-color: teal;
+    background-color: ${props => props.theme.primary};
     width: 150px;
     margin-left: 15px
 `;
-export const ProceedButton = styled(Button)`
+export const ProceedButton = styled(CustomButton)`
     background-color: ${props => props.theme.primary};
+    border-color: ${props => props.theme.primary};
     width: 100px;
     margin: 5px
 `;
 
-export const CardText = styled(Card.Title)`
-    color: teal;
+export const CardTitle = styled(Card.Title)`
+    color: ${props => props.theme.primary};
     padding-left:10px;
     padding-top:10px;
     padding-right:10px;
@@ -59,7 +82,7 @@ export const CardText = styled(Card.Title)`
 export const StartExamCard = styled(Card)`
     border-radius: 25px;
     height:270px;
-    border-color: teal;
+    border-color: ${props => props.theme.primary};
     border-width:3px;
 `;
 export const ExamLoginImage = styled(Image)`

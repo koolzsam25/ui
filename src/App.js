@@ -9,7 +9,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { getRole, getToken } from './utility/login';
 import NavBar from './Component/Navbar';
 import QuestionPaper from './Component/QuestionPaper';
-import { base } from './theme.js';
 import { ThemeProvider } from "styled-components";
 // import { GlobalStyles  } from "./Component/GlobalStyles";
 import {grey} from './theme';
@@ -17,7 +16,7 @@ import {grey} from './theme';
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(base);
+  console.log(grey);
   // Redirect to login if token not found
 
   useEffect(() => {

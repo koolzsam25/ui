@@ -1,0 +1,9 @@
+{
+    "application": {
+        "applicationName": "Assessment portal",
+        "Dashboard": "Dashboard"
+    },
+    "credit": {
+        "initialDays": 30
+    }
+}
