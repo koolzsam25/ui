@@ -60,37 +60,10 @@ export const ResultButton = styled(CustomButton)`
     margin: 5px
 `;
 
-export const ThisisMeButton = styled(Button)`
-    background-color: ${props => props.theme.primary};
-    width: 150px;
-    margin-left: 15px
-`;
-export const ProceedButton = styled(CustomButton)`
+
+export const ProceedButton = styled(Button)`
     background-color: ${props => props.theme.primary};
     border-color: ${props => props.theme.primary};
     width: 100px;
     margin: 5px
-`;
-
-export const CardTitle = styled(Card.Title)`
-    color: ${props => props.theme.primary};
-    padding-left:10px;
-    padding-top:10px;
-    padding-right:10px;
-`;
-
-export const StartExamCard = styled(Card)`
-    border-radius: 25px;
-    height:270px;
-    border-color: ${props => props.theme.primary};
-    border-width:3px;
-`;
-export const ExamLoginImage = styled(Image)`
-    width:60px;
-    height:60px;
-    margin-left:70px;
-`;
-export const ExamStackPanel=styled(Stack)`
-    margin-left:25px;
-    margin-top :25px;
 `;

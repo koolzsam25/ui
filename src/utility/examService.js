@@ -1,9 +1,12 @@
-import { students } from './Data';
+import { students,examData } from './Data';
 export function getExamData(examData) {
     const dataList = examData;
     return dataList;
 }
-
+export function getExamDetails(examId) {
+    const data = examData.find(_ =>_.Id == examId);
+    return data;
+}
 export function filterExamData(filterType, examData) {
     let filtredExamData;
     switch (filterType) {

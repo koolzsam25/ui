@@ -4,7 +4,14 @@ const QuestionPaper = () => {
     const location = useLocation();
     
     return (
-     <div>This is Question Paper for exam </div>
+    <div>
+        <h1>Subject</h1>
+        <div>
+            <h1>Exam Information</h1>
+            {/* https://www.freeonlinetest.in/online-exam/aptitude/simple-interest/1 */}
+        </div>
+          
+    </div>
     );
 }
 export default QuestionPaper;
