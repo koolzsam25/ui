@@ -8,7 +8,7 @@ const ProceedToExam = () => {
     const navigate = useNavigate();
     function GotoQuestionPaper()
     {
-        navigate(`/questionPaper`);
+        navigate(`/questionPaper`,{ state: {examId:state.examId}});
     };
     return (
     <div>
