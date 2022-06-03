@@ -15,13 +15,13 @@ const ProceedToExam = () => {
         <h1>Exam Information</h1>
         
         <OuterDiv className="bg-light border z-depth-5">
-        <Stack direction="horizontal">
-            <ExamStackPanel direction="verticle" className="btg-ligh" gap={3}>
+        <ExamStackPanel direction="verticle" className="btg-ligh" gap={3}>
                 <h6>Exam Name: {getExamDetails(state.examId).Name}</h6>
                 <h6>Start time: {getExamDetails(state.examId).Start}</h6>
                 <h6>No of Questions: {getExamDetails(state.examId).NoOfQuestions}</h6>
                 <h6>Duration: {getExamDetails(state.examId).Duration}</h6>
-            </ExamStackPanel>
+        </ExamStackPanel>
+        </OuterDiv> 
         <div className="ms-auto">
             <StartExamCard>
                 <CardText>Please verify your details</CardText>
@@ -35,8 +35,6 @@ const ProceedToExam = () => {
                 </Card.Body>
              </StartExamCard>
         </div>
-        </Stack>
-        </OuterDiv> 
   </div>
     );
 }

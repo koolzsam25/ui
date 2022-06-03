@@ -1,4 +1,5 @@
 import { students,examData } from './Data';
+import { questionPapers } from './QuestionBank'
 export function getExamData(examData) {
     const dataList = examData;
     return dataList;
@@ -39,4 +40,8 @@ export function getStudentDetails(studentId) {
 export function getTimeRemaining(expiryDate) {
     const diffInMs = Math.round(new Date(expiryDate) - new Date());
     return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+}
+export function getQuestionPaper(examid)
+{
+    return questionPapers.find(_=>_.subjectId==examid);
 }

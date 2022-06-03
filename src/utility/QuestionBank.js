@@ -1,4 +1,4 @@
-export const examData = 
+export const questionPapers = 
 [
     {
         "subjectId":1,

@@ -2,7 +2,8 @@ import React, { useState} from 'react';
 import Pagination from '../Pagination';
 import { useLocation } from 'react-router-dom';
 import Questions from '../Questions';
-const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+import { getQuestionPaper } from '../../utility/examService';
+
 const QuestionPaper = () => {
 const location = useLocation();
 const { state } = useLocation();
@@ -11,15 +12,17 @@ const[questionsPerPage,setPostPerPage]=useState(2);
 
 const indexOfLastQuestion = currentPage *questionsPerPage;
 const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
-const currentPost = data.slice(indexOfFirstQuestion, indexOfLastQuestion);
+// const data =() => getQuestionPaper(state.examId);
+// const currentPost = data.questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
+
+//console.log(currentPost);
 const paginate=pagenumber=>setCurrentPage(pagenumber); 
 return (
     <div>
-        <h1>Subject</h1>
+        <h3 style={{marginBottom:'50px', marginTop:'20px'}}>Subject : {getQuestionPaper(state.examId).subjectName}</h3>
         <div>
-            <h1>Exam Information: {state.examId}</h1>
-            <Questions questions={currentPost}></Questions>
-            <Pagination questionsPerPage={questionsPerPage} totalQuestions={data.length}  paginate={paginate}></Pagination>
+            <Questions questions={getQuestionPaper(state.examId).questions.slice(indexOfFirstQuestion, indexOfLastQuestion)}></Questions>
+            <Pagination questionsPerPage={questionsPerPage} totalQuestions={getQuestionPaper(state.examId).questions.length}  paginate={paginate}></Pagination>
         </div>
     </div>
     );

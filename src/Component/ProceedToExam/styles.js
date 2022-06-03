@@ -8,6 +8,7 @@ export const ExamStackPanel=styled(Stack)`
 export const StartExamCard = styled(Card)`
     border-radius: 25px;
     height:270px;
+    width: 350px;
     border-color: teal;
     border-width:3px;
 `;
@@ -31,5 +32,5 @@ export const ThisisMeButton = styled(Button)`
     margin-left: 15px
 `;
 export const OuterDiv = styled.div`
-    width: 700px;
+    margin-bottom: 20px;
 `;
