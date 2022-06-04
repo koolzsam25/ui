@@ -9,6 +9,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { getRole, getToken } from './utility/login';
 import NavBar from './Component/Navbar';
 import QuestionPaper from './Component/QuestionPaper';
+import ProceedToExam from './Component/ProceedToExam';
+import { base } from './theme.js';
 import { ThemeProvider } from "styled-components";
 // import { GlobalStyles  } from "./Component/GlobalStyles";
 import {grey} from './theme';
@@ -41,6 +43,7 @@ function App() {
           <Route path="/register" caseSensitive={false} element={<Register />} />
           <Route path="/dashboard" caseSensitive={false} element={<Dashboard />} />
           <Route path="/questionPaper" caseSensitive={false} element={<QuestionPaper />} />
+          <Route path="/proceedToExam" caseSensitive={false} element={<ProceedToExam />} />
         </Routes>
       </ThemeProvider>
     </div>
