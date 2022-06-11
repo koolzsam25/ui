@@ -3,7 +3,7 @@ import {useLocation} from 'react-router-dom';
 import {TeacherDashboard} from './styles';
 
 
-const Dashbaord = (role) => {
+const TeacherDashbaord = (role) => {
     const location = useLocation();
 
     return (
@@ -15,4 +15,4 @@ const Dashbaord = (role) => {
 
 }
 
-export default Dashbaord;
+export default TeacherDashbaord;
