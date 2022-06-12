@@ -10,10 +10,12 @@ import { getRole, getToken } from './utility/login';
 import NavBar from './Component/Navbar';
 import QuestionPaper from './Component/QuestionPaper';
 import ProceedToExam from './Component/ProceedToExam';
+import PublishTest from './Component/PublishTest';
 import { base } from './theme.js';
 import { ThemeProvider } from "styled-components";
 // import { GlobalStyles  } from "./Component/GlobalStyles";
 import {grey} from './theme';
+
 
 function App() {
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ function App() {
           <Route path="/dashboard" caseSensitive={false} element={<Dashboard />} />
           <Route path="/questionPaper" caseSensitive={false} element={<QuestionPaper />} />
           <Route path="/proceedToExam" caseSensitive={false} element={<ProceedToExam />} />
+          <Route path="/PublishTest" caseSensitive={false} element={<PublishTest />}/>
         </Routes>
       </ThemeProvider>
     </div>
