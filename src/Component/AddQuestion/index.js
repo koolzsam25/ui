@@ -10,19 +10,19 @@ const AddQuestion = (role) => {
         <div style={{border: '1px solid black',borderRadius:'5px', marginTop:'10px', marginBottom:'10px' , paddingLeft:'5px'}}>
         <div  contentEditable={true} suppressContentEditableWarning={true} >Question statement here</div>
         <div style={{display:flex }}>
-            <input style={{marginRight:'20px'}} type="radio"></input>
+            <input style={{marginRight:'20px'}} type="radio" name="options"></input>
             <label  contentEditable={true} suppressContentEditableWarning={true} >Option 1</label>
         </div>
         <div style={{display:flex }}>
-            <input style={{marginRight:'20px'}} type="radio"></input>
+            <input style={{marginRight:'20px'}} type="radio" name="options"></input>
             <label contentEditable={true} suppressContentEditableWarning={true} >Option 2</label>
         </div>
         <div style={{display:flex }}>
-            <input style={{marginRight:'20px'}} type="radio"></input>
+            <input style={{marginRight:'20px'}} type="radio" name="options"></input>
             <label contentEditable={true} suppressContentEditableWarning={true} >Option 3</label>
         </div>
         <div style={{display:flex }}>
-            <input style={{marginRight:'20px'}} type="radio"></input>
+            <input style={{marginRight:'20px'}} type="radio" name="options"></input>
             <label contentEditable={true} suppressContentEditableWarning={true} >Option 4</label>
         </div>
         </div>

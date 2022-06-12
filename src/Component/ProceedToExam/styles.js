@@ -31,9 +31,14 @@ export const ExamsFooter = styled(Card.Footer)`
     background-color: white
 `;
 export const ThisisMeButton = styled(Button)`
-    background-color: teal;
+    &:hover {
+        background-color: ${props => props.theme.secondary};
+        border-color: ${props => props.theme.secondary};
+    }
+    background-color: ${props => props.theme.primary};
     width: 150px;
     margin-left: 15px
+    
 `;
 export const OuterDiv = styled.div`
     margin-bottom: 20px;

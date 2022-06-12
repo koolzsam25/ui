@@ -61,7 +61,7 @@ export const ResultButton = styled(CustomButton)`
 `;
 
 
-export const ProceedButton = styled(Button)`
+export const ProceedButton = styled(CustomButton)`
     background-color: ${props => props.theme.primary};
     border-color: ${props => props.theme.primary};
     width: 100px;

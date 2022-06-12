@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {useLocation} from 'react-router-dom';
 import { Form,Row,Col,Button } from "react-bootstrap";
 import AddQuestion from '../../Component/AddQuestion'
+import {CommonButton} from './styles';
 const PublishTest = (role) => {
     const location = useLocation();
     const [questionIndexes, setQuestionIndexes] = useState([1]);
@@ -41,16 +42,16 @@ const PublishTest = (role) => {
                             /></Col>
                             </Row>
             </Form.Group>
-            <Button variant="outline-dark" size="sm" onClick={AddQuestions}>Add Questions</Button>
+            <CommonButton size="sm" onClick={AddQuestions}>Add Questions</CommonButton>
             {
              questionIndexes.map((q,i) =>(
                 <AddQuestion></AddQuestion>
          ))
          }
             
-            <Button variant="outline-dark"  block size="lg" type="submit" >
+            <CommonButton block size="lg" type="submit" >
                             Submit Question Paper
-            </Button>
+            </CommonButton>
             </div>
 
         </form></>
