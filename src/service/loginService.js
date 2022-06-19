@@ -1,12 +1,11 @@
 import axios from "axios";
 export async function loginUser(credentials) {
-    // return axios.get('http://localhost:8080/login', {
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(credentials)
-    // })
-    //     .then(data => data.json())
+    console.log("Entered in the login user method", credentials);
 
-    return { "token": "test123", "role": "STUDENT" };
+    const res = await axios.post('http://localhost:5000/v1/login', credentials)
+        .then(data => {
+            return data})
+    console.log("Data: ", res.data);
+    return res.data;
 }
+
