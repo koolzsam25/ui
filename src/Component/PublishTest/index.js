@@ -2,57 +2,80 @@ import React, { useState } from 'react';
 import {useLocation} from 'react-router-dom';
 import { Form,Row,Col,Button } from "react-bootstrap";
 import AddQuestion from '../../Component/AddQuestion'
-import {CommonButton} from './styles';
+import {SubmitButton, AddButton, OuterDiv, FormGroup} from './styles';
 const PublishTest = (role) => {
     const location = useLocation();
     const [questionIndexes, setQuestionIndexes] = useState([1]);
-
+    const [childData, setChildData] = useState("");
+    const QuestionPaperDifficulty = [
+        { value: 'Easy', label: 'Easy' },
+        { value: 'Difficult', label: 'Difficult' }
+      ];
     function AddQuestions()
     {
         let newarray = questionIndexes;
         newarray.push(questionIndexes.length+1);
         setQuestionIndexes([...newarray]);
-        console.log(questionIndexes);
     };
     return (
         <>
         <form action="" method="post" id="start-form">
-            <div className="col-sm-6" style={{flexDirection:'row' , margin:'10px' , textAlign:'left'}}>
-            <Form.Group size="lg" controlId="TestName" style={{flexDirection:'row' , margin:'10px'}} >
+            <OuterDiv className="col-sm-6">
+            <FormGroup size="lg" controlId="TestName">
                             <Row>
                             <Col><Form.Label>Test name </Form.Label></Col>
                             <Col><Form.Control
                                 autoFocus
                             /></Col>
                             </Row>
-            </Form.Group>
-            <Form.Group size="lg" controlId="TimeLimit" style={{flexDirection:'row' , margin:'10px'}} >
+            </FormGroup>
+            <FormGroup size="lg" controlId="TimeLimit" >
                             <Row>
                             <Col><Form.Label>Time Limit (Mins) </Form.Label></Col>
                             <Col><Form.Control
                                 type="number"
                             /></Col>
                             </Row>
-            </Form.Group>
-            <Form.Group size="lg" controlId="NoOfQues" style={{flexDirection:'row' , margin:'10px'}} >
+            </FormGroup>
+            <FormGroup size="lg" controlId="NoOfQues" >
                             <Row>
                             <Col><Form.Label>Number of Questions </Form.Label></Col>
                             <Col><Form.Control
                                 type="number"
                             /></Col>
                             </Row>
-            </Form.Group>
-            <CommonButton size="sm" onClick={AddQuestions}>Add Questions</CommonButton>
+            </FormGroup>
+            <FormGroup size="lg" controlId="DifficultLevel">
+                            <Row>
+                            <Col><Form.Label>Difficulty Level</Form.Label></Col>
+                            <Col><Form.Select >
+                                {/* Bind to QuestionPaperDifficulty */}
+                                <option value="Easy">Easy</option>
+                                <option value="Difficult">Difficult</option>
+                                </Form.Select>
+                                </Col>
+                            </Row>
+            </FormGroup>
+            <FormGroup size="lg" controlId="QuestionType">
+                            <Row>
+                            <Col><Form.Label>Question Paper Type</Form.Label></Col>
+                            <Col><Form.Select >
+                                <option value="MCQ">MCQ</option>
+                                </Form.Select>
+                                </Col>
+                            </Row>
+            </FormGroup>
+            <AddButton onClick={AddQuestions}>Add Questions</AddButton>
             {
-             questionIndexes.map((q,i) =>(
-                <AddQuestion></AddQuestion>
-         ))
-         }
+             questionIndexes.map((index) =>(
+                <AddQuestion questionIndex={index} ClickHandler = {setChildData}></AddQuestion>
+            ))
+            }
             
-            <CommonButton block size="lg" type="submit" >
-                            Submit Question Paper
-            </CommonButton>
-            </div>
+            <SubmitButton block  type="submit" >
+                            Submit
+            </SubmitButton>
+            </OuterDiv>
 
         </form></>
 
@@ -62,4 +85,3 @@ const PublishTest = (role) => {
 
 export default PublishTest;
 
-///export default PublishTest;
